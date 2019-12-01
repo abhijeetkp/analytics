@@ -50,6 +50,8 @@ y_pred_num <- ifelse(pred > 0.5, 1, 0)
 y_pred <- factor(y_pred_num, levels=c(0, 1))
 y_act <- testData$Class
 
+View(testData)
+
 # Accuracy
 mean(y_pred == y_act)  # 94%
 

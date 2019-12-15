@@ -3,7 +3,7 @@
 
 library(ggplot2)
 #Import data in R & read it.
-customer_data=read.csv("F:/rWork/rProjects/AbhiAnalytics/Mall_Customers.csv",header = T)
+customer_data=read.csv("D:/R Work/rProject/analytics/Mall_Customers.csv",header = T)
 str(customer_data)
 names(customer_data)
 View(customer_data)

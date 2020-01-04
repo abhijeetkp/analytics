@@ -53,6 +53,9 @@ tm2 - tm1
 difftime(tm2, tm1, units='mins')
 difftime(tm2, tm1, units='hours')
 
+months(all)
+quarter(all)
+
 #print date & time
 print(format(tm1, format = "%d - %b , %Y : %d/%B/%y, %A : %a : %H:%M:%S %l %p"))
 print(format(tm2, format = "%d - %b , %Y : %d/%B/%y, %A : %a : %H:%M:%S %l %p"))
@@ -87,6 +90,15 @@ ES = ets(tsdata)
 ES
 forecast::forecast(ES,2)  #forecast next 2 months
 
+sales = round(rnorm(100, mean = 120, sd = 2))
+sales
+ts1 = ts(data = sales, start = c(2010,1), frequency = 12)
+ts1
+plot(ts1)
+SMA1a = SMA(ts1, n = 5)
+head(ts1); head(SMA1a)
+sum(ts1[1:5]/5)
+
 #built in data sets
 AirPassengers
 monthplot(AirPassengers)
@@ -115,6 +127,13 @@ SBIN.NS
 head(SBIN.NS)
 plot(SBIN.NS[, "SBIN.NS.Close"], main = "SBIN.NS")
 candleChart(SBIN.NS, up.col = "black", dn.col = "red", theme = "white")
+
+getSymbols("MSFT", src = "yahoo", from = start, to = end)
+MSFT
+head(MSFT)
+plot(MSFT[, "MSFT.Close"], main = "MSFT")
+candleChart(MSFT, up.col = "black", dn.col = "red", theme = "white")
+
 #multiple stocks - prices from 
 getSymbols(c("ICICIBANK.NS", "TATAMOTORS.NS"), src = "yahoo", from = start, to = end)
 
